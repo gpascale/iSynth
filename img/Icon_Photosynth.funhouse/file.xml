@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>layers</key>
+	<array>
+		<dict>
+			<key>file</key>
+			<string>Icon_Photosynth.png</string>
+			<key>offsetX</key>
+			<real>86</real>
+			<key>offsetY</key>
+			<real>93</real>
+			<key>type</key>
+			<string>image</string>
+		</dict>
+		<dict>
+			<key>classname</key>
+			<string>CIAffineTransform</string>
+			<key>type</key>
+			<string>filter</string>
+			<key>values</key>
+			<dict>
+				<key>inputTransform_m11</key>
+				<real>1.7000000476837158</real>
+				<key>inputTransform_m12</key>
+				<real>0.0</real>
+				<key>inputTransform_m21</key>
+				<real>0.0</real>
+				<key>inputTransform_m22</key>
+				<real>1.7000000476837158</real>
+				<key>inputTransform_tX</key>
+				<real>0.0</real>
+				<key>inputTransform_tY</key>
+				<real>0.0</real>
+			</dict>
+		</dict>
+		<dict>
+			<key>classname</key>
+			<string>CILanczosScaleTransform</string>
+			<key>type</key>
+			<string>filter</string>
+			<key>values</key>
+			<dict>
+				<key>inputAspectRatio</key>
+				<real>0.92000001668930054</real>
+				<key>inputScale</key>
+				<real>1</real>
+			</dict>
+		</dict>
+		<dict>
+			<key>classname</key>
+			<string>CICrop</string>
+			<key>type</key>
+			<string>filter</string>
+			<key>values</key>
+			<dict>
+				<key>inputRectangle_CIVectorValue</key>
+				<string>[122 124 510 511]</string>
+			</dict>
+		</dict>
+	</array>
+	<key>windowHeight</key>
+	<real>709</real>
+	<key>windowWidth</key>
+	<real>788</real>
+</dict>
+</plist>

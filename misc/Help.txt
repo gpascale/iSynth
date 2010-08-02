@@ -1,0 +1,55 @@
+
+iSynth
+
+Welcome to iSynth. Here's a quick rundown of the program and how to use it.
+
+Menus:
+
+When iSynth first boots up, you're presented with a list of synths that you can view. By default, you're presented with the all-time most-viewed
+synths. Within the most-viewed category, use the bar at the top of the screen to select a different timeframe. Use the tab bar at the bottom of
+the screen to view a different group of synths. 
+
+- "Most Viewed" is displayed the first time you launch iSynth. Tap the gray bar near the top of the screen to adjust the timeframe.
+
+- "Recent" will display the 30 most recently created synths.
+
+- "Nice and Synthy" will bring up a list of synths which are, well, synthy. "Synthy" describes how well the photos meshed together when
+creating the synth. In a synth that has a synthiness score near 100%, the photos will generally be very well connected and there will be a robust
+pointcloud.
+
+- "Search" allows you to search the entire universe of synths on Photosynth.com! Typing in the name of a famous landmark or a particular 
+Photosynth user tends to work well.
+
+
+
+Viewing a synth:
+
+There are 3 "modes" to the synth viewer, "Normal mode", "Slideshow Mode" and "Orbit Mode".
+
+- To see what any button does, press and hold it. If you hold a button down for longer than a moment, it will reveal a label
+  describing its purpose and will not press. This is admittedly not the most intuitive action in the world, but screen real estate
+  is at a premium on the iPhone.
+
+- In all modes, you can access the menu by tapping the (i) button in the upper right hand corner of the screen.
+
+- "Normal mode" is the default mode and probably the one in which you will spend most of your time while using iSynth. 
+	- Use the arrow buttons to navigate left, right, up, down, in or out.
+	- For finer control, drag your finger over the screen to reveal white outlines of photos you can move to. To move to a photo in this
+	  way, simply lift your finger while its outline is being displayed.
+	- Camera controls in normal mode rely on two finger gestures. To zoom in or out, use the familiar spread and pinch gestures found in
+	  applications such as Safari. You can also rotate the camera in first-person-shooter style by holding one finger stationary and 
+	  dragging the other to direct the rotation. This gesture is far easier with two hands. I find it easiest to use two thumbs.
+	
+- "Orbit Mode" is accessed by selecting the Saturn-looking button from the menu in normal mode. Orbit mode zooms you out and allows you to
+freely rotate around the pointcloud. Additionally, the white pyramid-shape objects represent the locations where the pictures were taken from
+in the scene. You can double tap on any of them to jump to the corresponding photo in normal mode. If you're finding it hard to double tap on
+a camera, you can tap the button in the upper left corner (with the red X) to jump back to the photo you came from.
+
+Orbit mode controls:
+	- Use a one finger drag to rotate around the pointcloud
+	- Use the two finger pinch/spread gesture to zoom in/out
+	- Move two fingers in the same direction to move in a direction parallel to the screen. This will change the center point about which
+	  the camera rotates
+	  
+- "Slideshow Mode" is accessed from the menu in normal mode via the button that looks like a movie screen.  
+	

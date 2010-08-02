@@ -1,0 +1,185 @@
+-- TODO.txt
+-- Phonosynth
+
+--  Created by Greg on 1/21/09.
+--  Copyright 2009 Brown University. All rights reserved.
+
+
+
+Optimization Ideas
+- Try to optimize texture creation in any way possible (that's the main bottleneck)
+- Move Pointclouds into GPU memory if possible, transferring is very slow
+- Projecting Quad vertices is causing a major slowdown. Optimize that
+- Don't store matrices in Drawer. Copying them is taking a lot of CPU
+- Make decompress use a static buffer, maybe even a static CGContext
+
+Bugs
+- Crash due to textures (probably because deletion/creation is not really threadsafe)
+	- Think of a more robust system for texture management/sharing between threads
+- Garbage shows up after hiding and reenabling images
+	- Solution and feature - fade out images with fadeOutAllImages, then use goToIBCSAPI to bring them back 
+
+- Panoramas sometimes leave random images fully opaque. WTF?
+- Menu can be invisible but still pressable on synths after the first
+- Crashes when can't load Json file
+
+Features/Work Items
+- Get panoramas back in
+- Double tap zoom
+
+
+Final Pre-Release TODO:
+
+- (DONE) Double check on memory leaks
+- (DONE) Take out all Microsoft/LiveLabs symbols
+- (DONE) Get rid of geeky loading messages. Think about what to replace with
+- (DONE) Get rid of Photosynth Tip: Just write "No Description"
+- (DONE) make menu selection dehighlight when returning to main menu
+- (DONE) Get the starting image to work properly
+- (DONE) basically) Handle no internet connection more robustly
+- (DONE) Display an error message when content can't be fetched
+- (DONE) Distinguish between zero results returned and no network connection/other error
+- (DONE) Unhighlight tab bar selection when viewing user synths
+- (DONE) Improve panoramas so they dont jump to images which are too similar or too turned (nearly perp to current image)
+- (DONE) Wireframe quads sometimes showing up (Snow in England makes it happen when you go forward from starting image)
+- (DONE) Create good 57x57 icon 
+- (DONE) Make rotate screen button rotate consistently the other way
+- (DONE) Thumbnail download does not resume when coming back to main menu
+- Create a good 512x512 icon
+- Write a help section / description of project (non-Microsoft etc...)
+- Reduce maximum cache size when receive memory warning
+- Orbit Mode stuff
+	- (DONE) Use shared vertices for camera cones
+	- Adaptively size based on scale of synth, also adaptive radius
+	- (DONE) Fix focal length issue once and for all
+- Render to texture for efficient pointcloud viewing while camera isn't moving
+- Next coordinate system button
+	- Implementation will be easy, where to get button graphic?
+- Previous and Next buttons in slideshow mode
+	- Again, implementation will be easy, where to get button graphic? (could use arrows)
+- Button for exiting orbit mode easily (orbit mode button with X through it)
+- Try to speed up rotation with panoramas
+
+- Double tap zoom
+
+BUGS:
+- (FIXED) Synths by user fails and displays network connection error when it shouldn't (Test case: Hottie)
+- (FIXED) Seems to reliably crash when opening the 10th or 11th synth. Even when all synths are basically closed immediately after opening with no browsing.
+- (FIXED) After exiting a synth while in orbit mode, the next time you go into orbit mode it just snaps into place without smoothly transitioning
+- (FIXED) Quads stay visible in orbit mode
+- (FIXED) Panoramas happen in orbit mode (kinda cool? probably should just scrap for now, revisit later)
+- Quads
+	- (FIXED) sometimes remain picked after finger is removed, but don't go to image
+	- cause crash related to corrupted camera matrix. Threading?
+- Image URLs sometimes "", why? Haven't seen this recently, check it out.
+- Projector picking seems a little broken, sometimes
+- Garbage sometimes returned for a synth. How to deal with it?
+
+
+Can push to V2:
+- Smooth camera rotation when changing screen orientation
+- Add activity monitor to SynthDetailView while fetching extra collection data
+- Tooltips possibly?
+- Make state persist on close
+- Better download and texture prioritization in slideshow mode
+- Halos
+- Previous and Next button in slideshow
+- Next Coord System button
+
+
+
+
+Primary Coding Todo List:
+	- (DONE) Add a button to exit orbit mode. People may get confused about the projector thing. Orbit mode logo with a red X should be fine
+		- but try to find a better graphic
+	- (DONE) Add a button to access the help screen while viewing the synth. A question mark in the style of the other buttons would be ideal
+		- but try to find a better graphic
+	- (DONE) Add a button to jump to the next 3D group. Unsure whether this should be placed in the normal menu or the upper left corner
+		- but try to find a better graphic 
+	- (DONE) Add previous and next buttons to slideshow. Reusing one of the arrow graphics should be just fine, but it would be nice to have a next and previous icon
+		- but try to find a better graphic
+	- (DONE) Implement button labels for new buttons
+	- (DONE) Memory stuff.
+		- Shrink maximum cache sizes upon receiving a memory warning. Allocation is probably slowing things down when memory is tight.	
+	- (Goes along with release todo) Integrate disclaimer and help document into about view.	
+		- Perhaps lazily load pointcloud?
+	- Save settings when program quits and load when it starts
+	- Labels come up a little too fast, would be nice to make that happen slower. Perhaps just change the fade in function to an x^2 sort of curve
+		
+	
+Secondary Coding Todo List:
+	- Implement render to texture for the poiintcloud. Spec this out first as it could be done very cleanly or very not cleanly.
+	- Cap frame rate? Or at least stop the render thread after so long.
+
+Known Bugs:
+	- Crashed once while trying to load a] second synth. One of those "pointer being freed was not allocated" deals. Look for this.
+	- Used to crash sometimes when rapidly picking quads. Looked like confusion accessing the projection matrix from multiplie threads.
+	  Haven't seen this recently but not sure it's gone. Look for this one.
+	- (FIXED) (i) button doesn't show up by default. Why is it invisible?
+	- QRect stays visible sometimes, touch up seems to be at fault
+	- Offscreen-rendered pointcloud isn't quite right
+	
+
+Release Todo List:
+	- Finalize the blurb
+	- Generate a good 512x512 graphic.
+
+Known Bugs:
+
+
+Wish List:
+	- Look into Wolfgang Engel's hardcore ARM math code w/ SIMD instructions (http://code.google.com/p/vfpmathlibrary)
+	
+New List:
+	(DONE) Make a good next button
+	(DONE) Make a good previous button
+	(DONE) Make a good next 3d group button	
+	(DONE) Make a good arcball exit button, layer a red X over it?
+	
+	1. (FUCK IT) Make orbit mode adaptive
+	2. (FUCK IT) Button pressing bug. How to reproduce?
+	3. (FIXED) Pointcloud render-to-texture weirdness
+	4. (DONE) Low power state
+	5. (FIXED) Settings bundle fucked-upedness
+	6. (DONEHelp menu. Design it. Give it a done button for when accessed from synth view. Link it to web page.
+	7. (DONE) Activity indicator in synth detail view
+	8. Remove unit tests
+	9. Comment out debug stuff for shipping
+	10. About page. Write it
+	11. (DONE) Strip/optimize binary
+	12. (DONE AND IT'S SEXY!) Smooth fading of QRects
+	13. (DONE) Hide pointcloud doesn't work. Fuck it? Yes fuck it
+	14. (DONE) Make "User: x" or "user: x" go to user page if it's found
+		- Add a little label to explain this
+	14. (FUCK IT) Save last search term on disk
+	
+	1. (DONE) Refresh instead of load 1000 synths for nice and synthy
+	2. (DONE) 5cap # results at 200
+	3. Take out unit tests
+	4. Keep in inactivity timer
+	
+	
+	
+	TAKE OFF GENERATE DEBUG SYMBOLS IN DISTRIBUTION MODE
+	
+
+	
+Version 2 new Features
+- Get a subversion repository set up.
+- Favorites + Recently viewed (probably need to add a main menu to replace the UITabBar in the current main view)
+- 2D View. Smooth transition in and out. Need to formulate quads in terms of world matrix.
+- Halos. Is this necessary given that I have orbit mode? Think about how the UI might work.
+- Deeper zoom. Think about how to properly tessellate to make this work ok.
+
+
+
+
+
+
+
+
+
+
+
+
+

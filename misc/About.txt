@@ -1,0 +1,28 @@
+
+App Store Description:
+
+iSynth is a Photosynth (Photosynth.com) viewer for your iPhone or iPod Touch!
+
+Navigate through the world's most amazing places, experience Barack Obama's inauguration from every angle, 
+or study gorgeous 3D reconstructions of intricate objects, all in detail you simply don't get from 
+a simple slideshow. With iSynth, it's all right in your pocket. Create your own synths at Photosynth.com
+and you can view those too, anywhere you go!
+
+Features:
+- Browse the entire universe of synths on Photosynth.com
+- Explore synths easily with an intuitive, multi-touch control system
+- View the pointcloud like never before with Orbit Mode
+
+Coming Soon:
+- Favorites?
+- Halos?
+- Zoomable 2D view?
+- Higher maximum resolution for photos?
+- Suggestions? Please send me feedback at iSynthApp@gmail.comNSAuto
+
+Note:
+Though I developed iSynth mainly while I was an intern on the Photosynth team at Microsoft, it is my own personal project and not a Microsoft product.
+
+Technical Note:
+I plan on making the code available open-source some time in the near future. Check cs.brown.edu/people/gpascale/iSynth.html for updates.
+
